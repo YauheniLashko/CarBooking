@@ -1,12 +1,8 @@
-import requests
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 import datetime
-from datetime import timedelta
 import calendar
 import authorization
 
@@ -31,8 +27,8 @@ time.sleep(2)
 
 # Находим элемент начального пункта отправления
 element = driver.find_element(By.XPATH, '//div[@class="sc-chPdSV gWxTLm"]')
-time.sleep(2)
 element.click()
+time.sleep(2)
 # Находим элемент поиска
 element = driver.find_element(By.XPATH, '//input[@placeholder="Поиск"]')
 # Вводим НПО
@@ -75,18 +71,17 @@ element.click()
 time.sleep(3)
 # находим время отправления
 element = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div/div[2]/div[3]/div[2]/button")
+element.click()
+driver.close()
+exit("НЕТ МЕСТ")
+time.sleep(3)
 try:
-    element = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div/div[2]/div[3]/div[2]/button")
+    # находим начальную остановку
+    element = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div/form/div/div[1]/div")
     element.click()
 except:
     driver.close()
     exit("НЕТ МЕСТ")
-
-
-time.sleep(3)
-# находим начальную остановку
-element = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div/form/div/div[1]/div")
-element.click()
 # Находим элемент поиска
 element = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div/form/div/div[1]/div[2]/div[1]/input')
 element.click()
@@ -104,8 +99,8 @@ element = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div/for
 element.click()
 time.sleep(10)
 # бронируем
-element = driver.find_element(By.XPATH, "//*[@id='root']/div[2]/div[2]/div/form/button").click()
-time.sleep(30)
+# element = driver.find_element(By.XPATH, "//*[@id='root']/div[2]/div[2]/div/form/button").click()
+# time.sleep(30)
 
 
 
