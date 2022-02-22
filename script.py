@@ -53,7 +53,7 @@ element = driver.find_element(By.XPATH, '//div[@class="sc-bwzfXH frCQpJ"]')
 element.click()
 # находим сегодня
 today = driver.find_element(By.XPATH, "//div[@class='DayPicker-Day DayPicker-Day--selected DayPicker-Day--today']")
-if (int(today.text) + 7) > border[1]:
+if (int(today.text) + 5) > border[1]:
     difference = int(today.text)+7 - border[1]
     # перелистываем месяц
     element = driver.find_element(By.XPATH, "//*[@id='findBusForm']/div/form/div/div[3]/div[2]/div/div/div/div[1]/span[2]")
@@ -63,7 +63,7 @@ if (int(today.text) + 7) > border[1]:
     element.click()
 else:
     # нашел этот же день на след неделе
-    element = driver.find_element(By.XPATH, f"//div[contains(text(), {int(today.text)+7})]").click()
+    element = driver.find_element(By.XPATH, f"//div[contains(text(), {int(today.text)+5})]").click()
 
 # поиск билетов
 element = driver.find_element(By.XPATH, '//*[@id="findBusForm"]/div/form/button')
@@ -72,8 +72,6 @@ time.sleep(3)
 # находим время отправления
 element = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div/div[2]/div[3]/div[2]/button")
 element.click()
-driver.close()
-exit("НЕТ МЕСТ")
 time.sleep(3)
 try:
     # находим начальную остановку
