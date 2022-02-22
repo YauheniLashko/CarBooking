@@ -99,16 +99,3 @@ time.sleep(10)
 # бронируем
 # element = driver.find_element(By.XPATH, "//*[@id='root']/div[2]/div[2]/div/form/button").click()
 # time.sleep(30)
-
-
-
-
-
-
-
-
-
-# res = requests.get('https://obs.by')
-#
-#
-# print(res.text)
