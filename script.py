@@ -97,5 +97,5 @@ element = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div/for
 element.click()
 time.sleep(10)
 # бронируем
-# element = driver.find_element(By.XPATH, "//*[@id='root']/div[2]/div[2]/div/form/button").click()
-# time.sleep(30)
+element = driver.find_element(By.XPATH, "//*[@id='root']/div[2]/div[2]/div/form/button").click()
+time.sleep(30)
